@@ -3,6 +3,8 @@ package pdf.converter.txt;
 import org.apache.pdfbox.io.RandomAccessFile;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -10,8 +12,9 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class TxtCreator {
+    private static final Logger log = LoggerFactory.getLogger(TxtCreator.class);
 
-    private void process(File pdf, File output){
+    public void process(File pdf, File output){
         PDDocument pdDoc;
         try {//Kudos for closing: http://stackoverflow.com/questions/156508/closing-a-java-fileinputstream
             File tmpfile = File.createTempFile(String.format("txttmp-%s", UUID.randomUUID().toString()), null);
@@ -35,7 +38,7 @@ public class TxtCreator {
                 writer.close();
             }
         } catch (IOException ioe) {
-            log.warn(String.format("Failed to create txt file: %s", document.getId()), ioe);
+            log.warn(String.format("Failed to create txt for file: %s", pdf.getName()), ioe);
         }
     }
 }

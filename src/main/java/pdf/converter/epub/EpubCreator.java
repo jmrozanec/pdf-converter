@@ -15,33 +15,32 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class EpubCreator {
-    private String timestamp = DateTimeFormat.forPattern("yyyy-MM-dd'T'hh:mm:ssSZZ").print(DateTime.now());
-    private String uuid = UUID.randomUUID().toString();
+    private String timestamp;
+    private String uuid;
     private File basedir;
     private ClassLoader classLoader;
     private String title;
     private File imgsDir;
-    private File output;
 
 
-    public EpubCreator(String title, File imgsDir, File output){
+    public EpubCreator(){
+    }
+
+    public void create(String title, File imgsDir, File output) throws IOException {
+        timestamp = DateTimeFormat.forPattern("yyyy-MM-dd'T'hh:mm:ssSZZ").print(DateTime.now());
+        uuid = UUID.randomUUID().toString();
         this.title = title;
         this.imgsDir = imgsDir;
-        this.output = output;
 
         try {
-//            File tmp = File.createTempFile(uuid,"");
-//            tmp.mkdirs();
-            basedir = File.createTempFile(uuid,"");//new File(tmp, imgsDir.getName());
+            basedir = File.createTempFile(uuid,"");
             basedir.delete();
             basedir.mkdirs();
         } catch (IOException e) {
             e.printStackTrace();
         }
         classLoader = getClass().getClassLoader();
-    }
 
-    public void create() throws IOException {
         copyImages();
         copyStandardFilez();
         createOPFFile();
@@ -89,7 +88,7 @@ public class EpubCreator {
     private void createIndex() throws IOException {
         StringBuilder content = new StringBuilder();
         for(File file : listFiles()){
-            content.append(String.format("<p class=\"epub-java1\"><a id=\"%s\"></a><img src=\"images/%s\" class=\"epub-java2\"/></p>\n", idForImage(file.getName()), file.getName()));
+            content.append(String.format("<p class=\"pdf-converter1\"><a id=\"%s\"></a><img src=\"images/%s\" class=\"pdf-converter2\"/></p>\n", idForImage(file.getName()), file.getName()));
         }
         String index = readFileFromSrc("epub/index.html");
         index = index.replace("$CONTENT", content.toString());
