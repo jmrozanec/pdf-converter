@@ -18,11 +18,13 @@ Any .pdf file can be converted to the following formats:
  * .jpg: all pages converted to .jpg images
  * .zip: contains images for all pages from the .pdf in the original resolution. Images can be either in .png or .jpg format.
  
- **Example**
+ 
+**Example**
  
     PdfConverter
         .convert(new File(mobydick.pdf))
         .intoEpub("Moby Dick", new File("mobydick.epub"));
+
 
 **Contribute & Support!**
 
