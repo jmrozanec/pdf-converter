@@ -6,8 +6,8 @@ import org.ghost4j.document.DocumentException;
 import org.ghost4j.document.PDFDocument;
 import org.ghost4j.renderer.RendererException;
 import org.ghost4j.renderer.SimpleRenderer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class ImgCreator {
-    private static final Logger log = LoggerFactory.getLogger(ImgCreator.class);
+//    private static final Logger log = LoggerFactory.getLogger(ImgCreator.class);
 
     /**
      * @param pdf - File to be processed;
@@ -38,7 +38,7 @@ public class ImgCreator {
                 }
             }
         } catch (IOException |RendererException |DocumentException e) {
-            log.warn(String.format("Failed to create images for document: %s", pdf.getName()), e);
+//            log.warn(String.format("Failed to create images for document: %s", pdf.getName()), e);
         }
     }
 

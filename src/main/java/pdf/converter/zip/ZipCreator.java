@@ -1,6 +1,8 @@
 package pdf.converter.zip;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import pdf.converter.img.ImageFileExtension;
+import pdf.converter.img.ImgCreator;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -10,7 +12,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class ZipCreator {
-    private static final Logger log = LoggerFactory.getLogger(ZipCreator.class);
+//    private static final Logger log = LoggerFactory.getLogger(ZipCreator.class);
 
     public void create(File imgsDir, File output) throws IOException {
         pack(imgsDir.getAbsolutePath(), output.getAbsolutePath());
@@ -29,9 +31,15 @@ public class ZipCreator {
                             zs.write(Files.readAllBytes(path));
                             zs.closeEntry();
                         } catch (Exception e) {
-                            log.warn("Failed to create zip file", e);
+//                            log.warn("Failed to create zip file", e);
                         }
                     });
         }
     }
+
+    public static void main(String[] args) {
+        new ImgCreator().process(new File("/home/joze/Downloads/ASEFlogo_popravljen.pdf"), new File("/home/joze/Downloads"), 300, 800, 800, ImageFileExtension.PNG);
+    }
 }
+
+

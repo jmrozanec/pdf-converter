@@ -7,7 +7,13 @@ A Java library to convert .pdf files into .epub, .txt, .png, .jpg, .zip formats.
 
 **Download**
 
-pdf-converter will soon be available on Maven Central.
+pdf-converter is available on [Maven central](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.bit-scout%22) repository.
+
+    <dependency>
+        <groupId>com.bit-scout</groupId>
+        <artifactId>pdf-converter</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </dependency>
 
 **Features**
 
@@ -21,10 +27,12 @@ Any .pdf file can be converted to the following formats:
  
 **Example**
  
+```java
+
     PdfConverter
         .convert(new File(mobydick.pdf))
         .intoEpub("Moby Dick", new File("mobydick.epub"));
-
+```
 
 **Contribute & Support!**
 

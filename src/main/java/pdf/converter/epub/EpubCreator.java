@@ -22,10 +22,6 @@ public class EpubCreator {
     private String title;
     private File imgsDir;
 
-
-    public EpubCreator(){
-    }
-
     public void create(String title, File imgsDir, File output) throws IOException {
         timestamp = DateTimeFormat.forPattern("yyyy-MM-dd'T'hh:mm:ssSZZ").print(DateTime.now());
         uuid = UUID.randomUUID().toString();
