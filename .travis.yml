@@ -13,7 +13,7 @@ addons:
   sonarcloud:
     organization: "jmrozanec-github"
     token:
-      secure: "ZmVdpiC5ivHP72R7NZsv3s9XM9WuZQ//psUbpxJf+HLJGes+dAUppkiIBBICLwGstCCdyfTx1XaW56Gh2zTohrNBhv2S7OmrWwp8+o+dCIb1k6B4PsQ3b6h5bplcorAItMstoBZB8EowG875QENwlrZuB/qBHGy61vgERiNzPgA="
+      secure: "eLi07vooUivdhdChr/4VJUZyGDeQuFSymlwqinpgNPofUOJRRUXqvg1UBggywOJUjwa/6UM08SRc1RPRiqRgY50Ke3NueHbFk+MBIJjyrKo/hPqtUeXkUjtE/Uy64Kju/5n4xAt5FswO1HKJsrQoFAuKo/g46DXJocnYgkWm7xalal3Y3B3rZ5y8M2m5vFHlFoAY2oXbO9tV39XeFMkboLTNB/7brJA1oKlUhv9lZBzsQ22A+oiy9d39QUJbxQntLCeGm1GLnL6ed+5f6gFf+hvv5NgfA1I/ZDsZfbGyNN4dgLYemuXcI4ncMWu2v3F2POqkPGZ8Erc1f1e8rEOW7h3Z/c/KD1of9P+P4FMLM6u+B0GN0BtAq6CP9lxOKwPmzFOrTD0nvUkh4DQnzSPWfsltSxvHRuya+1rbEeYmRiL5Gp+h1ZrJWurLaW8+qSrTva3X9P7dv5g8wYW1BaHrDAyfY7vYjLEfH9QNUNA7FuEUYtFOe1RlVEOb5GECcSpoaPVSeV+TmwiEudbIW/mXrgTocqoKjtZ4Xm0X3Jm4hzCRjpBKL3CM6ojHdra886QQk8EgQypnrlCaS40MeG8smA9xfrq32vltT1IPCuwb1w6zBvg1ms+iRcU+jaK4RZEhHvCJtuG8sLZxRqBawBySMybPxpzms1FGn2RfUS2gNao="
 script:
    - > 
      if [ "$TRAVIS_PULL_REQUEST" != "false" ];then 
