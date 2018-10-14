@@ -1,7 +1,4 @@
 <configuration>
-    <!--include resource="logback-${spring.profiles.active}.xml"/-->
-    <!--Kudos to: http://stackoverflow.com/questions/29429073/spring-boot-logback-and-logging-config-property -->
-
     <!-- put your appenders -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned the type
@@ -31,10 +28,6 @@
         </encoder>
     </appender>
 
-    <!-- put your loggers here -->
-    <logger name="org.springframework.web" additivity="false" level="INFO">
-        <appender-ref ref="CONSOLE" />
-    </logger>
     <!-- put your root here -->
     <root level="info">
         <appender-ref ref="CONSOLE" />
