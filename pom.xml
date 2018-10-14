@@ -10,7 +10,7 @@
 
     <groupId>com.bit-scout</groupId>
     <artifactId>pdf-converter</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>pdf-converter</name>
     <description>A Java library to convert .pdf files into .txt, .jpg, .png, .epub and .zip formats.
