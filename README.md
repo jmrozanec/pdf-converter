@@ -12,7 +12,7 @@ pdf-converter is available on [Maven central](http://search.maven.org/#search%7C
     <dependency>
         <groupId>com.bit-scout</groupId>
         <artifactId>pdf-converter</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </dependency>
 
 **Features**
