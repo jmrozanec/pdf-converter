@@ -10,6 +10,9 @@ jdk:
 before_install: "git clone -b travis `git config --get remote.origin.url` target/travis"
 
 addons:
+  apt:
+    packages:
+      - ghostscript
   sonarcloud:
     organization: "jmrozanec-github"
     token:
