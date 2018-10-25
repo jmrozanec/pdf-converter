@@ -60,6 +60,7 @@ public class ImgCreator {
     }
 
     private void persistImage(BufferedImage image, int width, int height, File output) throws IOException {
+        System.out.println(output);
         output.getParentFile().mkdirs();
         ImageIO.write(Thumbnails.of(image).size(width, height).asBufferedImage(), FilenameUtils.getExtension(output.getAbsolutePath()), output);
     }

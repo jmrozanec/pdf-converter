@@ -24,6 +24,7 @@ public class PdfConverterTest {
 
     private Path copyToTmp() throws IOException {
         Path tmpdir = new File(String.format("/tmp/%s", UUID.randomUUID().toString())).toPath();
+        System.out.println(tmpdir);
         Files.createDirectories(tmpdir);
         Path dest = new File(tmpdir.toFile(), "mobydick.pdf").toPath();
         ClassLoader classLoader = getClass().getClassLoader();

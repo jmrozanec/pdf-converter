@@ -8,6 +8,8 @@ import pdf.converter.zip.ZipCreator;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.UUID;
 
 public class PdfConverter {
@@ -31,13 +33,16 @@ public class PdfConverter {
 
     public void intoEpub(String title, File output){
         try {
-            File imgsdir = File.createTempFile(UUID.randomUUID().toString(), "");
-            imgsdir.mkdirs();
+            //File imgsdir = File.createTempFile(UUID.randomUUID().toString(), "");
+            Path imgsdir = new File(String.format("/tmp/%s", UUID.randomUUID().toString())).toPath();
+            Files.createDirectories(imgsdir);
+
+
             ImgCreator creator = new ImgCreator();
-            creator.process(pdf, imgsdir, RESOLUTION, WIDTH, HEIGHT, ImageFileExtension.PNG);
+            creator.process(pdf, imgsdir.toFile(), RESOLUTION, WIDTH, HEIGHT, ImageFileExtension.PNG);
             EpubCreator epubCreator = new EpubCreator();
-            epubCreator.create(title, imgsdir, output);
-            FileUtils.deleteDirectory(imgsdir);
+            epubCreator.create(title, imgsdir.toFile(), output);
+            FileUtils.deleteDirectory(imgsdir.toFile());
         } catch (IOException e) {
             e.printStackTrace();
         }
