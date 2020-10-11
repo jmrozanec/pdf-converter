@@ -2,7 +2,7 @@ package pdf.converter.txt;
 
 import org.apache.pdfbox.io.RandomAccessFile;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.util.PDFTextStripper;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,9 +17,7 @@ public class TxtCreator {
     public void process(File pdf, File output){
         PDDocument pdDoc;
         try {//Kudos for closing: http://stackoverflow.com/questions/156508/closing-a-java-fileinputstream
-            File tmpfile = File.createTempFile(String.format("txttmp-%s", UUID.randomUUID().toString()), null);
-            RandomAccessFile raf = new RandomAccessFile(tmpfile, "rw");
-            pdDoc = PDDocument.loadNonSeq(pdf, raf);
+            pdDoc = PDDocument.load(pdf);
             FileWriter writer = new FileWriter(output);
             try {
                 PDFTextStripper stripper = new PDFTextStripper();
@@ -33,8 +31,6 @@ public class TxtCreator {
                 }
             } finally {
                 pdDoc.close();
-                raf.close();
-                tmpfile.delete();
                 writer.close();
             }
         } catch (IOException ioe) {
