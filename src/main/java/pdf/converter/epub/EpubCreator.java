@@ -141,11 +141,9 @@ public class EpubCreator {
     }
 
     private List<File> listFiles(){
-        File[] files = imgsDir.listFiles((dir, name) -> {
-            return name.toLowerCase().endsWith(".png");
-        });
+        File[] files = imgsDir.listFiles((dir, name) -> name.toLowerCase().endsWith(".png"));
         List<File> sorted = Lists.newArrayList(files);
-        Collections.sort(sorted, (o1, o2) -> o1.toString().compareTo(o2.toString()));
+        sorted.sort(Comparator.comparing(File::toString));
         return sorted;
     }
 }
