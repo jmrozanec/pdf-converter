@@ -1,4 +1,0 @@
-Features:
-    1.rar format compressed
-    2.doc or docx format converer
-    
