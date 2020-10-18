@@ -2,3 +2,10 @@ Features:
     1.rar format compressed
     2.doc or docx format converer
     
+
+The files that i added:
+
+	1.docx convert to pdf in /src/main/java/pdf/converter/docx
+	2. i added 2 file log4j and docx4j
+	3. i added dependency added the necessary dependencies to pom.xml which I have commented "new dependency".
+
