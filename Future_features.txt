@@ -1,8 +1,5 @@
-Features:
-    1.rar format compressed
-    2.doc or docx format converer
-    
-
+new Feature :
+	1.pdf to .rar convert
 The files that i added:
 
 	1.docx convert to pdf in /src/main/java/pdf/converter/docx
