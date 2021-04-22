@@ -63,7 +63,7 @@
         <junit.version>4.12</junit.version>
         <mockito.version>3.5.13</mockito.version>
         <powermock.version>2.0.7</powermock.version>
-        <guava.version>29.0-jre</guava.version>
+        <guava.version>30.1.1-jre</guava.version>
 
         <github.global.server>github</github.global.server>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
