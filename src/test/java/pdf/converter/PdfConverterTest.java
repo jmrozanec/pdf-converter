@@ -11,7 +11,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.UUID;
 
 public class PdfConverterTest {
-
+    
     @Test
     public void convert() throws Exception {
         Path path = copyToTmp();
@@ -20,8 +20,9 @@ public class PdfConverterTest {
                 .convert(new File(path.toFile(), "mobydick.pdf"))
                 .intoEpub("Moby Dick", dest);
         Assert.assertTrue(dest.exists());
+        System.out.println("do test");
     }
-
+    
     private Path copyToTmp() throws IOException {
         Path tmpdir = new File(String.format("/tmp/%s", UUID.randomUUID().toString())).toPath();
         System.out.println(tmpdir);
