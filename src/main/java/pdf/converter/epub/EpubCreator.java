@@ -50,8 +50,11 @@ public class EpubCreator {
     private void copyImages() throws IOException {
         File imagesDir = new File(basedir, "images");
         imagesDir.mkdirs();
-        for(File file : listFiles()){
-            IOUtils.copy(new FileInputStream(file), new FileOutputStream(new File(imagesDir, file.getName())));
+        for (File file : listFiles()) {
+            try (FileInputStream inputStream = new FileInputStream(file);
+                 FileOutputStream outputStream = new FileOutputStream(new File(imagesDir, file.getName()))) {
+                IOUtils.copy(inputStream, outputStream);
+            }
         }
     }
 
