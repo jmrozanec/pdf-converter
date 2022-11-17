@@ -51,7 +51,10 @@ public class EpubCreator {
         File imagesDir = new File(basedir, "images");
         imagesDir.mkdirs();
         for(File file : listFiles()){
-            IOUtils.copy(new FileInputStream(file), new FileOutputStream(new File(imagesDir, file.getName())));
+            try(FileInputStream fileInputStream = new FileInputStream(file);
+                FileOutputStream fileOutputStream = new FileOutputStream(new File(imagesDir, file.getName()))) {
+                IOUtils.copy(fileInputStream, fileOutputStream);
+            }
         }
     }
 
